@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "kisspng-nissan-leaf-car-sport-utility-vehicle-nissan-qashq-nissan-car-5ac484be7cf4d7.2068430415228284785118.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "kisspng-nissan-leaf-car-sport-utility-vehicle-nissan-qashq-nissan-car-5ac484be7cf4d7.2068430415228284785118@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "kisspng-nissan-leaf-car-sport-utility-vehicle-nissan-qashq-nissan-car-5ac484be7cf4d7.2068430415228284785118@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

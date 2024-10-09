@@ -23,7 +23,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3OW-lV-zf3" customClass="ShadowView" customModule="Car_Dealer" customModuleProvider="target">
                     <rect key="frame" x="30" y="87" width="333" height="68"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carHelp" translatesAutoresizingMaskIntoConstraints="NO" id="Y6E-Rw-GBk">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myCar" translatesAutoresizingMaskIntoConstraints="NO" id="Y6E-Rw-GBk">
                             <rect key="frame" x="158" y="0.0" width="175" height="68"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="68" id="0pq-2b-fy7"/>
@@ -74,7 +74,7 @@
         </view>
     </objects>
     <resources>
-        <image name="carHelp" width="175" height="68"/>
+        <image name="myCar" width="175" height="68"/>
         <namedColor name="dark_Gray">
             <color red="0.82352941176470584" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

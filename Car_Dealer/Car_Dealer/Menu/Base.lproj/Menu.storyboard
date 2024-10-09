@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,26 +33,203 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gez-dk-pxV">
-                                <rect key="frame" x="45" y="224" width="110" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="AddCar"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2U-2v-ctJ">
-                                <rect key="frame" x="230" y="224" width="110" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="My Cars"/>
-                                <connections>
-                                    <action selector="clickedMyCars:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xqc-7N-Jl0"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="s4y-au-DAu">
+                                <rect key="frame" x="21" y="235" width="374" height="451"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOV-1c-w3l">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myCar" translatesAutoresizingMaskIntoConstraints="NO" id="7iS-E8-5H4">
+                                                <rect key="frame" x="219" y="0.0" width="175" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="kam-Qh-mVc"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jm3-v3-GH3">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="IlR-f1-fST"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="MY CAR">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedMyCars:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fj-BK-qIc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="dark_Gray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="7iS-E8-5H4" secondAttribute="bottom" id="391-mf-L5P"/>
+                                            <constraint firstItem="7iS-E8-5H4" firstAttribute="top" secondItem="dOV-1c-w3l" secondAttribute="top" id="Eoy-Jt-2Re"/>
+                                            <constraint firstAttribute="trailing" secondItem="7iS-E8-5H4" secondAttribute="trailing" constant="-20" id="FNu-Jr-xCO"/>
+                                            <constraint firstAttribute="height" constant="88" id="JHK-TX-Jiv"/>
+                                            <constraint firstItem="Jm3-v3-GH3" firstAttribute="top" secondItem="dOV-1c-w3l" secondAttribute="top" id="NNC-hC-1C5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Jm3-v3-GH3" secondAttribute="bottom" id="nnD-5u-iCj"/>
+                                            <constraint firstItem="Jm3-v3-GH3" firstAttribute="leading" secondItem="dOV-1c-w3l" secondAttribute="leading" id="pg6-Tt-RkA"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jm3-v3-GH3" secondAttribute="trailing" id="sic-NV-oz7"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFC-TC-bYh">
+                                        <rect key="frame" x="0.0" y="121" width="374" height="88"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addCar" translatesAutoresizingMaskIntoConstraints="NO" id="Dky-J5-5G9">
+                                                <rect key="frame" x="218.33333333333337" y="0.0" width="155.66666666666663" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="6vd-Py-GXl"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bn9-az-kbW">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="8KR-ur-ajj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="ADD A CAR">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedAddCar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M0M-B5-kNp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="dark_Gray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="0S7-g0-KrK"/>
+                                            <constraint firstAttribute="trailing" secondItem="bn9-az-kbW" secondAttribute="trailing" id="LDq-pD-a4e"/>
+                                            <constraint firstItem="Dky-J5-5G9" firstAttribute="top" secondItem="IFC-TC-bYh" secondAttribute="top" id="Nbw-PX-Hmc"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dky-J5-5G9" secondAttribute="bottom" id="T7E-Sa-Iy7"/>
+                                            <constraint firstAttribute="bottom" secondItem="bn9-az-kbW" secondAttribute="bottom" id="gKC-F2-R04"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dky-J5-5G9" secondAttribute="trailing" id="gWX-p3-DW6"/>
+                                            <constraint firstItem="bn9-az-kbW" firstAttribute="top" secondItem="IFC-TC-bYh" secondAttribute="top" id="hre-uC-XDH"/>
+                                            <constraint firstItem="bn9-az-kbW" firstAttribute="leading" secondItem="IFC-TC-bYh" secondAttribute="leading" id="jKp-u6-pUf"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwZ-Mt-GeD">
+                                        <rect key="frame" x="0.0" y="242" width="374" height="88"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reportCar" translatesAutoresizingMaskIntoConstraints="NO" id="zYy-RW-2oe">
+                                                <rect key="frame" x="214.33333333333337" y="0.0" width="159.66666666666663" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="iNQ-of-xyN"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdW-Ly-ZgP">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="eSG-dk-9Y7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="REPORT">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedReports:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FVV-wG-UdD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="dark_Gray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zYy-RW-2oe" secondAttribute="trailing" id="983-aX-fHl"/>
+                                            <constraint firstAttribute="trailing" secondItem="sdW-Ly-ZgP" secondAttribute="trailing" id="FaV-aa-si9"/>
+                                            <constraint firstAttribute="bottom" secondItem="zYy-RW-2oe" secondAttribute="bottom" id="LCw-Ba-M8d"/>
+                                            <constraint firstItem="zYy-RW-2oe" firstAttribute="top" secondItem="GwZ-Mt-GeD" secondAttribute="top" id="LZt-OQ-p8N"/>
+                                            <constraint firstAttribute="bottom" secondItem="sdW-Ly-ZgP" secondAttribute="bottom" id="eKK-JI-Nwb"/>
+                                            <constraint firstItem="sdW-Ly-ZgP" firstAttribute="leading" secondItem="GwZ-Mt-GeD" secondAttribute="leading" id="ewI-6Q-Njs"/>
+                                            <constraint firstAttribute="height" constant="88" id="kBH-aH-A2X"/>
+                                            <constraint firstItem="sdW-Ly-ZgP" firstAttribute="top" secondItem="GwZ-Mt-GeD" secondAttribute="top" id="l9D-N4-VoP"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a77-1b-t0A">
+                                        <rect key="frame" x="0.0" y="363" width="374" height="88"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="helpCar" translatesAutoresizingMaskIntoConstraints="NO" id="Oh5-md-oG3">
+                                                <rect key="frame" x="214.33333333333337" y="0.0" width="159.66666666666663" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="vA5-yy-Mus"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8A-Vy-X05">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="88"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="88" id="8ek-81-tvT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <inset key="contentEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="titleEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="HELP">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedHelp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="icQ-hO-Nys"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="dark_Gray"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Oh5-md-oG3" secondAttribute="trailing" id="0fx-12-pZE"/>
+                                            <constraint firstItem="H8A-Vy-X05" firstAttribute="leading" secondItem="a77-1b-t0A" secondAttribute="leading" id="Fr2-3J-8oy"/>
+                                            <constraint firstItem="Oh5-md-oG3" firstAttribute="top" secondItem="a77-1b-t0A" secondAttribute="top" id="Fy3-ae-hcM"/>
+                                            <constraint firstAttribute="bottom" secondItem="Oh5-md-oG3" secondAttribute="bottom" id="LFf-o8-1Gf"/>
+                                            <constraint firstItem="H8A-Vy-X05" firstAttribute="top" secondItem="a77-1b-t0A" secondAttribute="top" id="YD8-ZS-a82"/>
+                                            <constraint firstAttribute="bottom" secondItem="H8A-Vy-X05" secondAttribute="bottom" id="q4U-6K-FkC"/>
+                                            <constraint firstAttribute="trailing" secondItem="H8A-Vy-X05" secondAttribute="trailing" id="wvS-lb-BaI"/>
+                                            <constraint firstAttribute="height" constant="88" id="znU-jb-pJ2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s4y-au-DAu" secondAttribute="trailing" constant="-2" id="17Z-D3-6Nb"/>
+                            <constraint firstItem="s4y-au-DAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="d1z-Tv-J6t"/>
+                            <constraint firstItem="s4y-au-DAu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="juk-nz-WsN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YVK-Km-vrF"/>
+                    <connections>
+                        <outletCollection property="sectionButtons" destination="Jm3-v3-GH3" collectionClass="NSMutableArray" id="umB-XJ-2fj"/>
+                        <outletCollection property="sectionButtons" destination="bn9-az-kbW" collectionClass="NSMutableArray" id="1QB-Fn-2iZ"/>
+                        <outletCollection property="sectionButtons" destination="sdW-Ly-ZgP" collectionClass="NSMutableArray" id="WIF-Yy-zfu"/>
+                        <outletCollection property="sectionButtons" destination="H8A-Vy-X05" collectionClass="NSMutableArray" id="DBK-Tq-Gud"/>
+                        <outletCollection property="sectionsView" destination="dOV-1c-w3l" collectionClass="NSMutableArray" id="n3H-5b-6VP"/>
+                        <outletCollection property="sectionsView" destination="IFC-TC-bYh" collectionClass="NSMutableArray" id="YaX-tz-wif"/>
+                        <outletCollection property="sectionsView" destination="GwZ-Mt-GeD" collectionClass="NSMutableArray" id="EwE-tA-gjK"/>
+                        <outletCollection property="sectionsView" destination="a77-1b-t0A" collectionClass="NSMutableArray" id="ChF-57-Ze7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,6 +237,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addCar" width="155.66667175292969" height="88.666664123535156"/>
+        <image name="helpCar" width="159.66667175292969" height="106.66666412353516"/>
+        <image name="myCar" width="175" height="68"/>
+        <image name="reportCar" width="159.66667175292969" height="97.666664123535156"/>
+        <namedColor name="dark_Gray">
+            <color red="0.82352941176470584" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
