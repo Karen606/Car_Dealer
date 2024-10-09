@@ -35,6 +35,10 @@
 		6B1B65F32CB69BB500815AF3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B65F22CB69BB500815AF3 /* String.swift */; };
 		6B1B65F62CB6A08500815AF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B65F52CB6A08500815AF3 /* CoreDataManager.swift */; };
 		6B1B65F82CB6A5F600815AF3 /* PriceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B65F72CB6A5F600815AF3 /* PriceTextField.swift */; };
+		6B1B65FC2CB6D78600815AF3 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B65FA2CB6D78600815AF3 /* CarTableViewCell.swift */; };
+		6B1B65FD2CB6D78600815AF3 /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B65FB2CB6D78600815AF3 /* CarTableViewCell.xib */; };
+		6B1B65FF2CB6DF3B00815AF3 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B65FE2CB6DF3B00815AF3 /* Double.swift */; };
+		6B1B66032CB6F4A600815AF3 /* MyCarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B66022CB6F4A600815AF3 /* MyCarsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		6B1B65F22CB69BB500815AF3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		6B1B65F52CB6A08500815AF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6B1B65F72CB6A5F600815AF3 /* PriceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceTextField.swift; sourceTree = "<group>"; };
+		6B1B65FA2CB6D78600815AF3 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		6B1B65FB2CB6D78600815AF3 /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
+		6B1B65FE2CB6DF3B00815AF3 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		6B1B66022CB6F4A600815AF3 /* MyCarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 				6B1B65EA2CB6910300815AF3 /* BaseButton.swift */,
 				6B1B65F72CB6A5F600815AF3 /* PriceTextField.swift */,
 				6B1B65DC2CB682CE00815AF3 /* ShadowView.swift */,
+				6B1B65FE2CB6DF3B00815AF3 /* Double.swift */,
 				6B1B65DE2CB682E500815AF3 /* UIView.swift */,
 				6B1B65E62CB6880F00815AF3 /* TitleLabel.swift */,
 				6B1B65E82CB6889700815AF3 /* BaseTextField.swift */,
@@ -156,6 +165,8 @@
 		6B1B65D22CB6750E00815AF3 /* MyCars */ = {
 			isa = PBXGroup;
 			children = (
+				6B1B66002CB6F48900815AF3 /* ViewModel */,
+				6B1B65F92CB6D76E00815AF3 /* Cell */,
 				6B1B65D32CB6754600815AF3 /* View */,
 			);
 			path = MyCars;
@@ -211,6 +222,23 @@
 				6B1B65F52CB6A08500815AF3 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		6B1B65F92CB6D76E00815AF3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B1B65FA2CB6D78600815AF3 /* CarTableViewCell.swift */,
+				6B1B65FB2CB6D78600815AF3 /* CarTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6B1B66002CB6F48900815AF3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B1B66022CB6F4A600815AF3 /* MyCarsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +305,7 @@
 				6B1B65BA2CB5FB9A00815AF3 /* Base in Resources */,
 				6B1B65DB2CB6822700815AF3 /* gothampro_medium.ttf in Resources */,
 				6B1B65CB2CB6036700815AF3 /* Inter-Regular.ttf in Resources */,
+				6B1B65FD2CB6D78600815AF3 /* CarTableViewCell.xib in Resources */,
 				6B1B65CC2CB6036700815AF3 /* Inter-Medium.ttf in Resources */,
 				6B1B65B22CB5FB9800815AF3 /* Base in Resources */,
 				6B1B65CE2CB6036700815AF3 /* Inter-SemiBold.ttf in Resources */,
@@ -306,8 +335,11 @@
 				6B1B65D92CB6759100815AF3 /* ViewController.swift in Sources */,
 				6B1B65AD2CB5FB9800815AF3 /* SceneDelegate.swift in Sources */,
 				6B1B65E42CB6849900815AF3 /* AddCarViewController.swift in Sources */,
+				6B1B66032CB6F4A600815AF3 /* MyCarsViewModel.swift in Sources */,
+				6B1B65FC2CB6D78600815AF3 /* CarTableViewCell.swift in Sources */,
 				6B1B65DF2CB682E500815AF3 /* UIView.swift in Sources */,
 				6B1B65F32CB69BB500815AF3 /* String.swift in Sources */,
+				6B1B65FF2CB6DF3B00815AF3 /* Double.swift in Sources */,
 				6B1B65D62CB6755300815AF3 /* MyCarsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

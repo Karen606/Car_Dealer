@@ -19,6 +19,7 @@ class AddCarViewController: UIViewController {
     @IBOutlet weak var saveButton: BaseButton!
     private var cancellables: Set<AnyCancellable> = []
     private let viewModel = AddCarViewModel.shared
+    var completion: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ class AddCarViewController: UIViewController {
             if let error = error {
                 self.showErrorAlert(message: error.localizedDescription)
             } else {
+                self.completion?()
                 self.navigationController?.popViewController(animated: true)
             }
         }

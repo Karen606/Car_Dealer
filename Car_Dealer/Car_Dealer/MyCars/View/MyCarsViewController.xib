@@ -5,13 +5,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyCarsViewController" customModule="Car_Dealer" customModuleProvider="target">
             <connections>
                 <outlet property="addCarButton" destination="iy9-zT-8Xm" id="IUc-3l-3f5"/>
+                <outlet property="carTableView" destination="tok-Ev-zFI" id="K9m-P6-9VS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -62,13 +62,21 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tok-Ev-zFI">
+                    <rect key="frame" x="0.0" y="179" width="393" height="639"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tok-Ev-zFI" secondAttribute="trailing" id="4pv-9l-zjs"/>
                 <constraint firstItem="3OW-lV-zf3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="4rF-eE-PYn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tok-Ev-zFI" secondAttribute="bottom" id="O1z-JY-JGI"/>
+                <constraint firstItem="tok-Ev-zFI" firstAttribute="top" secondItem="3OW-lV-zf3" secondAttribute="bottom" constant="24" id="Ub3-Kr-22u"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3OW-lV-zf3" secondAttribute="trailing" constant="30" id="ZQX-Vn-LM4"/>
                 <constraint firstItem="3OW-lV-zf3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="28" id="bmm-hp-1Vg"/>
+                <constraint firstItem="tok-Ev-zFI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zfT-zp-jY0"/>
             </constraints>
             <point key="canvasLocation" x="43.511450381679388" y="19.718309859154932"/>
         </view>
@@ -78,8 +86,5 @@
         <namedColor name="dark_Gray">
             <color red="0.82352941176470584" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
