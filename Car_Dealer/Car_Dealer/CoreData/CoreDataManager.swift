@@ -138,32 +138,42 @@ class CoreDataManager {
         }
     }
     
-//    func updateWineFavoriteStatus(wineID: UUID, isFavorite: Bool, completion: @escaping (Error?) -> Void) {
-//        let backgroundContext = persistentContainer.newBackgroundContext()
-//        backgroundContext.perform {
-//            let fetchRequest: NSFetchRequest<Wine> = Wine.fetchRequest()
-//            fetchRequest.predicate = NSPredicate(format: "id == %@", wineID as CVarArg)
-//            do {
-//                let results = try backgroundContext.fetch(fetchRequest)
-//                
-//                if let wine = results.first {
-//                    wine.isFavorite = isFavorite
-//                    try backgroundContext.save()
-//                    DispatchQueue.main.async {
-//                        completion(nil)
-//                    }
-//                } else {
-//                    DispatchQueue.main.async {
-//                        completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Wine not found"]))
-//                    }
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion(error)
-//                }
-//            }
-//        }
-//    }
+    func saleCar(carModel: CarModel, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", carModel.id as CVarArg)
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                
+                if let car = results.first {
+                    car.isSold = true
+                    car.brand = carModel.brand
+                    car.expenses = NSOrderedSet(array: carModel.expenses ?? [])
+                    car.info = carModel.info
+                    car.mileag = carModel.mileag
+                    car.model = carModel.mileag
+                    car.purchasePrice = carModel.purchasePrice ?? 0
+                    car.salePrice = carModel.salePrice ?? 0
+                    car.year = carModel.year
+                    car.photoBefore = carModel.photoBefore
+                    car.photoAfter = carModel.photoAfter
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Wine not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
 //
 //    func updateMyWineStatus(wineID: UUID, isMyWine: Bool, completion: @escaping (Error?) -> Void) {
 //        let backgroundContext = persistentContainer.newBackgroundContext()

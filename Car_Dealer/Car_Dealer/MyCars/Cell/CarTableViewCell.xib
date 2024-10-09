@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z68-KW-QEU">
-                        <rect key="frame" x="28" y="12" width="383" height="91"/>
+                        <rect key="frame" x="28" y="8" width="383" height="102"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEe-dN-VXw">
                                 <rect key="frame" x="367" y="-7" width="20" height="20"/>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Emk-ob-MgD">
-                                <rect key="frame" x="11" y="9" width="58" height="73"/>
+                                <rect key="frame" x="11" y="9" width="58" height="84"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdasd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytb-ei-xxq">
                                         <rect key="frame" x="0.0" y="0.0" width="58" height="21.666666666666668"/>
@@ -42,13 +42,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZk-LZ-o6o">
-                                        <rect key="frame" x="0.0" y="25.666666666666664" width="58" height="21.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="31.333333333333336" width="58" height="21.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xf-8w-T6T">
-                                        <rect key="frame" x="0.0" y="51.333333333333329" width="58" height="21.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="62.333333333333321" width="58" height="21.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -127,8 +127,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Z68-KW-QEU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="6eK-fJ-uR7"/>
-                    <constraint firstAttribute="bottom" secondItem="Z68-KW-QEU" secondAttribute="bottom" constant="8" id="QOa-mX-s8h"/>
-                    <constraint firstItem="Z68-KW-QEU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="UsU-z2-koe"/>
+                    <constraint firstAttribute="bottom" secondItem="Z68-KW-QEU" secondAttribute="bottom" constant="1" id="QOa-mX-s8h"/>
+                    <constraint firstItem="Z68-KW-QEU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="UsU-z2-koe"/>
                     <constraint firstAttribute="trailing" secondItem="Z68-KW-QEU" secondAttribute="trailing" constant="28" id="gna-t8-QbL"/>
                 </constraints>
             </tableViewCellContentView>
@@ -160,13 +160,13 @@
     <resources>
         <image name="delete" width="20" height="20"/>
         <namedColor name="greenText">
-            <color red="0.015686274509803921" green="0.5725490196078431" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.016000000759959221" green="0.57300001382827759" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light_Gray">
-            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85100001096725464" green="0.85100001096725464" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="redText">
-            <color red="0.67450980392156867" green="0.23529411764705882" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67500001192092896" green="0.23499999940395355" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

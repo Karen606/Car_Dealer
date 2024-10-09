@@ -25,5 +25,4 @@ class AddCarViewModel {
     func clear() {
         carModel = CarModel(id: UUID())
     }
-    
 }

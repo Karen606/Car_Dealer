@@ -40,8 +40,14 @@ class MyCarsViewController: UIViewController {
             .store(in: &cancellables)
     }
     
-    @objc func clickedSale() {
-        
+    @objc func clickedSale(sender: UIButton) {
+        let saleCarVC = SaleCarViewController(nibName: "SaleCarViewController", bundle: nil)
+        saleCarVC.completion = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.fetchData()
+        }
+        SaleCarViewModel.shared.carModel = viewModel.cars[sender.tag]
+        self.navigationController?.pushViewController(saleCarVC, animated: true)
     }
 
     @IBAction func clickedAddCar(_ sender: UIButton) {
@@ -77,21 +83,24 @@ extension MyCarsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if viewModel.cars[section].isSold {
             return UIView()
+        } else {
+            let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+            let button = UIButton(type: .custom)
+            button.backgroundColor = .black
+            button.setTitle("Sale", for: .normal)
+            button.titleLabel?.font = .regular(size: 15)
+            button.setTitleColor(.white, for: .normal)
+            button.addTarget(self, action: #selector(clickedSale(sender:)), for: .touchUpInside)
+            button.tag = section
+            button.frame = CGRect(x: (footerView.frame.width - 126) / 2, y: (footerView.frame.height - 25) / 2, width: 126, height: 25)
+            button.layer.cornerRadius = 2.5
+            footerView.addSubview(button)
+            return footerView
         }
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
-        let button = UIButton(type: .custom)
-        button.backgroundColor = .black
-        button.setTitle("Sale", for: .normal)
-        button.titleLabel?.font = .regular(size: 15)
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(clickedSale), for: .touchUpInside)
-        button.frame = CGRect(x: (footerView.frame.width - 126) / 2, y: (footerView.frame.height - 25) / 2, width: 126, height: 25)
-        button.layer.cornerRadius = 2.5
-        footerView.addSubview(button)
-        return footerView
+        
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return viewModel.cars[section].isSold ? 8 : 30
+        return viewModel.cars[section].isSold ? 8 : 40
     }
 }

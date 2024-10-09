@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SaleCarViewController" customModule="Car_Dealer" customModuleProvider="target">
+            <connections>
+                <outlet property="carBrandTextField" destination="fxb-0S-YfQ" id="poD-aj-o91"/>
+                <outlet property="carModelTextField" destination="FUK-bW-qzf" id="0sb-EU-Bb8"/>
+                <outlet property="descriptionTextView" destination="E0U-gi-Gx1" id="4oY-ct-4tT"/>
+                <outlet property="milTextField" destination="x6a-e8-YBZ" id="rsy-Ca-k7f"/>
+                <outlet property="priceTextField" destination="dje-dX-mGE" id="O7T-tB-swe"/>
+                <outlet property="salePriceTextField" destination="tIR-Oe-63W" id="7ba-Cn-Ojf"/>
+                <outlet property="saveButton" destination="ytD-pT-Kgb" id="ctw-Gu-jqR"/>
+                <outlet property="scrollView" destination="n0e-Ko-HkK" id="kgd-0b-vjM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yearTextField" destination="1mp-xO-Ri9" id="ypL-XQ-iBO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-Ko-HkK">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRp-u9-MjC">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="787"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IXE-za-AnD">
+                                    <rect key="frame" x="0.0" y="28" width="393" height="498"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lY-V7-g78">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vs-05-tzz" customClass="TitleLabel" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="32" y="0.0" width="63" height="16.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fxb-0S-YfQ" customClass="BaseTextField" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="31.333333333333329" width="361" height="23.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="fxb-0S-YfQ" secondAttribute="bottom" constant="3" id="95l-lD-Cyf"/>
+                                                <constraint firstAttribute="trailing" secondItem="fxb-0S-YfQ" secondAttribute="trailing" constant="16" id="987-2y-4As"/>
+                                                <constraint firstItem="fxb-0S-YfQ" firstAttribute="leading" secondItem="2lY-V7-g78" secondAttribute="leading" constant="16" id="Brk-xa-Vrt"/>
+                                                <constraint firstItem="2Vs-05-tzz" firstAttribute="leading" secondItem="2lY-V7-g78" secondAttribute="leading" constant="32" id="UOH-qz-jxP"/>
+                                                <constraint firstItem="fxb-0S-YfQ" firstAttribute="top" secondItem="2Vs-05-tzz" secondAttribute="bottom" constant="15" id="Wym-w1-WfT"/>
+                                                <constraint firstAttribute="height" constant="58" id="e7L-L8-DNt"/>
+                                                <constraint firstItem="2Vs-05-tzz" firstAttribute="top" secondItem="2lY-V7-g78" secondAttribute="top" id="fhW-6w-TcA"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OP-Sz-Isl">
+                                            <rect key="frame" x="0.0" y="88" width="393" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zv2-vR-0Db" customClass="TitleLabel" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="32.000000000000007" y="0.0" width="65.666666666666686" height="16.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUK-bW-qzf" customClass="BaseTextField" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="31.333333333333343" width="361" height="23.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="FUK-bW-qzf" secondAttribute="trailing" constant="16" id="EjW-Fc-4UH"/>
+                                                <constraint firstAttribute="height" constant="58" id="QAy-nv-6b4"/>
+                                                <constraint firstItem="zv2-vR-0Db" firstAttribute="top" secondItem="1OP-Sz-Isl" secondAttribute="top" id="YAO-2h-YKK"/>
+                                                <constraint firstItem="zv2-vR-0Db" firstAttribute="leading" secondItem="1OP-Sz-Isl" secondAttribute="leading" constant="32" id="fPN-8k-GGw"/>
+                                                <constraint firstAttribute="bottom" secondItem="FUK-bW-qzf" secondAttribute="bottom" constant="3" id="ghz-2T-Ygl"/>
+                                                <constraint firstItem="FUK-bW-qzf" firstAttribute="top" secondItem="zv2-vR-0Db" secondAttribute="bottom" constant="15" id="p8M-P0-Gx0"/>
+                                                <constraint firstItem="FUK-bW-qzf" firstAttribute="leading" secondItem="1OP-Sz-Isl" secondAttribute="leading" constant="16" id="vpY-eP-RbS"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysm-Rz-6x6">
+                                            <rect key="frame" x="0.0" y="176" width="393" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year of release" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trr-qV-Nvn" customClass="TitleLabel" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="32" y="0.0" width="92" height="16.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1mp-xO-Ri9" customClass="BaseTextField" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="31.333333333333314" width="361" height="23.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1mp-xO-Ri9" secondAttribute="trailing" constant="16" id="1UO-jj-1ZN"/>
+                                                <constraint firstItem="Trr-qV-Nvn" firstAttribute="leading" secondItem="Ysm-Rz-6x6" secondAttribute="leading" constant="32" id="5ww-eQ-6sY"/>
+                                                <constraint firstAttribute="bottom" secondItem="1mp-xO-Ri9" secondAttribute="bottom" constant="3" id="Ydf-aC-U6a"/>
+                                                <constraint firstItem="1mp-xO-Ri9" firstAttribute="top" secondItem="Trr-qV-Nvn" secondAttribute="bottom" constant="15" id="frC-mM-hRH"/>
+                                                <constraint firstItem="1mp-xO-Ri9" firstAttribute="leading" secondItem="Ysm-Rz-6x6" secondAttribute="leading" constant="16" id="gZc-Lc-tEp"/>
+                                                <constraint firstAttribute="height" constant="58" id="oKY-Aa-oDi"/>
+                                                <constraint firstItem="Trr-qV-Nvn" firstAttribute="top" secondItem="Ysm-Rz-6x6" secondAttribute="top" id="yFa-YI-E1h"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVR-lM-wrz">
+                                            <rect key="frame" x="0.0" y="264" width="393" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mileage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILo-ow-bLD" customClass="TitleLabel" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="32" y="0.0" width="49" height="16.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x6a-e8-YBZ" customClass="BaseTextField" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="31.333333333333314" width="361" height="23.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="ILo-ow-bLD" firstAttribute="leading" secondItem="qVR-lM-wrz" secondAttribute="leading" constant="32" id="V67-bj-1rJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="x6a-e8-YBZ" secondAttribute="bottom" constant="3" id="ZHY-wg-gpD"/>
+                                                <constraint firstItem="ILo-ow-bLD" firstAttribute="top" secondItem="qVR-lM-wrz" secondAttribute="top" id="ris-uM-l9F"/>
+                                                <constraint firstAttribute="height" constant="58" id="tah-LW-Efb"/>
+                                                <constraint firstItem="x6a-e8-YBZ" firstAttribute="top" secondItem="ILo-ow-bLD" secondAttribute="bottom" constant="15" id="v0S-f9-H3g"/>
+                                                <constraint firstAttribute="trailing" secondItem="x6a-e8-YBZ" secondAttribute="trailing" constant="16" id="xO2-P8-fYV"/>
+                                                <constraint firstItem="x6a-e8-YBZ" firstAttribute="leading" secondItem="qVR-lM-wrz" secondAttribute="leading" constant="16" id="ymm-1s-z8p"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJC-bf-YOo">
+                                            <rect key="frame" x="0.0" y="352" width="393" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psm-xt-W0Z" customClass="TitleLabel" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="32.000000000000007" y="0.0" width="93.666666666666686" height="16.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dje-dX-mGE" customClass="PricesTextField" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="31.333333333333314" width="361" height="23.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="dje-dX-mGE" firstAttribute="top" secondItem="Psm-xt-W0Z" secondAttribute="bottom" constant="15" id="MXq-q1-US7"/>
+                                                <constraint firstAttribute="height" constant="58" id="ZC7-mJ-39F"/>
+                                                <constraint firstAttribute="trailing" secondItem="dje-dX-mGE" secondAttribute="trailing" constant="16" id="cJg-19-hIm"/>
+                                                <constraint firstItem="dje-dX-mGE" firstAttribute="leading" secondItem="uJC-bf-YOo" secondAttribute="leading" constant="16" id="gKT-Qm-tCd"/>
+                                                <constraint firstAttribute="bottom" secondItem="dje-dX-mGE" secondAttribute="bottom" constant="3" id="ikQ-it-qhi"/>
+                                                <constraint firstItem="Psm-xt-W0Z" firstAttribute="leading" secondItem="uJC-bf-YOo" secondAttribute="leading" constant="32" id="r0e-K1-H8W"/>
+                                                <constraint firstItem="Psm-xt-W0Z" firstAttribute="top" secondItem="uJC-bf-YOo" secondAttribute="top" id="u08-JX-9Rd"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIw-5w-7dJ">
+                                            <rect key="frame" x="0.0" y="440" width="393" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sale price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hr-f3-0VV" customClass="TitleLabel" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="32" y="0.0" width="62.333333333333343" height="16.333333333333332"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tIR-Oe-63W" customClass="PricesTextField" customModule="Car_Dealer" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="31.333333333333371" width="361" height="23.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tIR-Oe-63W" secondAttribute="bottom" constant="3" id="N8X-Xy-zPj"/>
+                                                <constraint firstAttribute="trailing" secondItem="tIR-Oe-63W" secondAttribute="trailing" constant="16" id="UKc-hy-dUM"/>
+                                                <constraint firstItem="tIR-Oe-63W" firstAttribute="top" secondItem="9hr-f3-0VV" secondAttribute="bottom" constant="15" id="WH1-Go-jki"/>
+                                                <constraint firstItem="tIR-Oe-63W" firstAttribute="leading" secondItem="AIw-5w-7dJ" secondAttribute="leading" constant="16" id="WmJ-1X-dza"/>
+                                                <constraint firstAttribute="height" constant="58" id="cX5-vu-rEq"/>
+                                                <constraint firstItem="9hr-f3-0VV" firstAttribute="leading" secondItem="AIw-5w-7dJ" secondAttribute="leading" constant="32" id="gEJ-oR-EAT"/>
+                                                <constraint firstItem="9hr-f3-0VV" firstAttribute="top" secondItem="AIw-5w-7dJ" secondAttribute="top" id="rWk-Zs-Szc"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AC-9Y-tGP">
+                                    <rect key="frame" x="30" y="586" width="333" height="95"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYb-e8-p6p" customClass="TitleLabel" customModule="Car_Dealer" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="71.333333333333329" height="16.333333333333332"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E0U-gi-Gx1">
+                                            <rect key="frame" x="0.0" y="20" width="333" height="71"/>
+                                            <color key="backgroundColor" name="dark_Gray"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="bYb-e8-p6p" firstAttribute="top" secondItem="8AC-9Y-tGP" secondAttribute="top" id="0wE-R0-sR6"/>
+                                        <constraint firstAttribute="trailing" secondItem="E0U-gi-Gx1" secondAttribute="trailing" id="ELr-jH-P5x"/>
+                                        <constraint firstAttribute="height" constant="95" id="EhV-B4-m9J"/>
+                                        <constraint firstItem="E0U-gi-Gx1" firstAttribute="top" secondItem="bYb-e8-p6p" secondAttribute="bottom" constant="3.6666666666666679" id="RM2-Tf-SWj"/>
+                                        <constraint firstAttribute="bottom" secondItem="E0U-gi-Gx1" secondAttribute="bottom" constant="4" id="jmd-ag-GuJ"/>
+                                        <constraint firstItem="E0U-gi-Gx1" firstAttribute="leading" secondItem="8AC-9Y-tGP" secondAttribute="leading" id="rL2-fG-GDf"/>
+                                        <constraint firstItem="bYb-e8-p6p" firstAttribute="leading" secondItem="8AC-9Y-tGP" secondAttribute="leading" id="s1l-zQ-kOp"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytD-pT-Kgb" customClass="BaseButton" customModule="Car_Dealer" customModuleProvider="target">
+                                    <rect key="frame" x="146.66666666666666" y="731" width="100" height="32"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="1O2-k3-MwE"/>
+                                        <constraint firstAttribute="width" constant="100" id="Rve-Tn-LDd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Save">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clickedSaveButton:" destination="-1" eventType="touchUpInside" id="bxK-Gx-bGV"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="IXE-za-AnD" firstAttribute="leading" secondItem="zRp-u9-MjC" secondAttribute="leading" id="0XY-hK-G3z"/>
+                                <constraint firstAttribute="trailing" secondItem="8AC-9Y-tGP" secondAttribute="trailing" constant="30" id="2kA-Bv-rD9"/>
+                                <constraint firstItem="8AC-9Y-tGP" firstAttribute="leading" secondItem="zRp-u9-MjC" secondAttribute="leading" constant="30" id="34c-VH-yiY"/>
+                                <constraint firstItem="ytD-pT-Kgb" firstAttribute="top" secondItem="8AC-9Y-tGP" secondAttribute="bottom" constant="50" id="DZx-gb-U02"/>
+                                <constraint firstAttribute="trailing" secondItem="IXE-za-AnD" secondAttribute="trailing" id="FMc-QB-LHs"/>
+                                <constraint firstItem="IXE-za-AnD" firstAttribute="top" secondItem="zRp-u9-MjC" secondAttribute="top" constant="28" id="GIF-Jg-TvZ"/>
+                                <constraint firstAttribute="bottom" secondItem="ytD-pT-Kgb" secondAttribute="bottom" constant="24" id="nkb-sJ-vxc"/>
+                                <constraint firstItem="ytD-pT-Kgb" firstAttribute="centerX" secondItem="zRp-u9-MjC" secondAttribute="centerX" id="pL4-fh-fWI"/>
+                                <constraint firstItem="8AC-9Y-tGP" firstAttribute="top" secondItem="IXE-za-AnD" secondAttribute="bottom" constant="60" id="yvJ-1f-cQu"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="8j0-zE-MxE" appends="YES" id="6sR-sY-cHH"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zRp-u9-MjC" firstAttribute="centerX" secondItem="n0e-Ko-HkK" secondAttribute="centerX" id="BT6-rf-bvM"/>
+                        <constraint firstAttribute="bottom" secondItem="zRp-u9-MjC" secondAttribute="bottom" id="Se7-4h-8a3"/>
+                        <constraint firstItem="zRp-u9-MjC" firstAttribute="top" secondItem="n0e-Ko-HkK" secondAttribute="top" id="ild-lY-aKs"/>
+                        <constraint firstAttribute="trailing" secondItem="zRp-u9-MjC" secondAttribute="trailing" id="v6F-Np-H28"/>
+                        <constraint firstItem="zRp-u9-MjC" firstAttribute="leading" secondItem="n0e-Ko-HkK" secondAttribute="leading" id="ysL-ia-ddy"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="n0e-Ko-HkK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="49A-kF-AdH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="n0e-Ko-HkK" secondAttribute="bottom" id="7jc-ef-Ic7"/>
+                <constraint firstItem="n0e-Ko-HkK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="TLp-62-cxx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n0e-Ko-HkK" secondAttribute="trailing" id="fqc-m0-Yka"/>
+            </constraints>
+            <point key="canvasLocation" x="-138" y="20"/>
+        </view>
+        <tapGestureRecognizer id="8j0-zE-MxE">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="MBg-Ou-tXd"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <namedColor name="dark_Gray">
+            <color red="0.82400000095367432" green="0.81599998474121094" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

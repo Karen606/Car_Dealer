@@ -1,5 +1,5 @@
 //
-//  AddCarViewController.swift
+//  SaleCarViewController.swift
 //  Car_Dealer
 //
 //  Created by Karen Khachatryan on 09.10.24.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class AddCarViewController: UIViewController {
+class SaleCarViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var carBrandTextField: BaseTextField!
@@ -16,21 +16,24 @@ class AddCarViewController: UIViewController {
     @IBOutlet weak var yearTextField: BaseTextField!
     @IBOutlet weak var milTextField: BaseTextField!
     @IBOutlet weak var priceTextField: PricesTextField!
+    @IBOutlet weak var salePriceTextField: PricesTextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var saveButton: BaseButton!
     private var cancellables: Set<AnyCancellable> = []
-    private let viewModel = AddCarViewModel.shared
+    private let viewModel = SaleCarViewModel.shared
     var completion: (() -> ())?
-    
+    private var isFilled = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         subscribe()
     }
 
+
     func setupUI() {
         self.registerKeyboardNotifications()
-        setNavigationBar(title: "Add a car")
+        setNavigationBar(title: "Sales a car")
         saveButton.titleLabel?.font = .regular(size: 19.5)
         descriptionTextView.font = .regular(size: 14)
         descriptionTextView.addShadow()
@@ -38,6 +41,7 @@ class AddCarViewController: UIViewController {
         textFields.forEach({ $0?.delegate = self })
         descriptionTextView.delegate = self
         priceTextField.baseDelegate = self
+        salePriceTextField.baseDelegate = self
     }
     
     func subscribe() {
@@ -45,13 +49,22 @@ class AddCarViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] carModel in
                 guard let self = self else { return }
+                if let carModel = carModel, !isFilled {
+                    self.carBrandTextField.text = carModel.brand
+                    self.carModelTextField.text = carModel.model
+                    self.yearTextField.text = carModel.year
+                    self.milTextField.text = carModel.mileag
+                    self.priceTextField.text = carModel.purchasePrice.formattedToString()
+                    self.descriptionTextView.text = carModel.info
+                    self.isFilled = true
+                }
                 self.saveButton.isEnabled = self.viewModel.isValid()
             }
             .store(in: &cancellables)
     }
-
+    
     @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
-        self.handleTap()
+        handleTap()
     }
     
     @IBAction func clickedSaveButton(_ sender: BaseButton) {
@@ -65,22 +78,28 @@ class AddCarViewController: UIViewController {
             }
         }
     }
+    
+    deinit {
+        viewModel.clear()
+    }
 }
 
-extension AddCarViewController: PriceTextFielddDelegate, UITextFieldDelegate, UITextViewDelegate {
+extension SaleCarViewController: PriceTextFielddDelegate, UITextFieldDelegate, UITextViewDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let value = textField.text else { return }
         switch textField {
         case priceTextField:
-            viewModel.carModel.purchasePrice = priceTextField.formatNumber()
+            viewModel.carModel?.purchasePrice = priceTextField.formatNumber()
         case carBrandTextField:
-            viewModel.carModel.brand = value
+            viewModel.carModel?.brand = value
         case carModelTextField:
-            viewModel.carModel.model = value
+            viewModel.carModel?.model = value
         case yearTextField:
-            viewModel.carModel.year = value
+            viewModel.carModel?.year = value
         case milTextField:
-            viewModel.carModel.mileag = value
+            viewModel.carModel?.mileag = value
+        case salePriceTextField:
+            viewModel.carModel?.salePrice = salePriceTextField.formatNumber()
         default:
             break
         }
@@ -89,12 +108,17 @@ extension AddCarViewController: PriceTextFielddDelegate, UITextFieldDelegate, UI
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == priceTextField, let value = textField.text, !value.isEmpty {
             priceTextField.text! += "$"
+        } else if textField == salePriceTextField {
+            salePriceTextField.text! += "$"
         }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == priceTextField, let value = textField.text, !value.isEmpty && value.last == "$" {
+        guard let value = textField.text, !value.isEmpty && value.last == "$" else { return }
+        if textField == priceTextField {
             priceTextField.text?.removeLast()
+        } else if textField == salePriceTextField {
+            salePriceTextField.text?.removeLast()
         }
     }
     
@@ -105,6 +129,8 @@ extension AddCarViewController: PriceTextFielddDelegate, UITextFieldDelegate, UI
             let allowedCharacters = CharacterSet.decimalDigits
             let characterSet = CharacterSet(charactersIn: string)
             return allowedCharacters.isSuperset(of: characterSet)
+        } else if textField == salePriceTextField {
+            return salePriceTextField.textField(textField, shouldChangeCharactersIn: range, replacementString: string)
         } else {
             return true
         }
@@ -115,14 +141,15 @@ extension AddCarViewController: PriceTextFielddDelegate, UITextFieldDelegate, UI
     }
     
     func textViewDidChangeSelection(_ textView: UITextView) {
-        viewModel.carModel.info = textView.text
+        viewModel.carModel?.info = textView.text
     }
+    
 }
 
-extension AddCarViewController {
+extension SaleCarViewController {
     
     func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(AddCarViewController.keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SaleCarViewController.keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     @objc func keyboardNotification(notification: NSNotification) {

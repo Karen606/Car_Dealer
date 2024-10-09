@@ -17,6 +17,7 @@
                 <outlet property="milTextField" destination="Ku4-te-6eu" id="T4r-w2-wqM"/>
                 <outlet property="priceTextField" destination="XFe-cJ-9yi" id="etn-v6-c8n"/>
                 <outlet property="saveButton" destination="ZS4-xa-H1Y" id="q04-qD-ydW"/>
+                <outlet property="scrollView" destination="KQz-FZ-l5v" id="Wif-Mg-jdD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yearTextField" destination="Yes-Vl-ZJ2" id="DKn-VF-q9c"/>
             </connections>
@@ -223,6 +224,7 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="NXC-ph-WUo" firstAttribute="top" secondItem="R2e-cD-5yT" secondAttribute="bottom" constant="60" id="0yb-La-7mS"/>
                                 <constraint firstAttribute="trailing" secondItem="NXC-ph-WUo" secondAttribute="trailing" constant="30" id="CPn-aN-TPK"/>
@@ -234,6 +236,9 @@
                                 <constraint firstItem="R2e-cD-5yT" firstAttribute="top" secondItem="xzU-zM-d4u" secondAttribute="top" constant="28" id="pHX-UA-WSB"/>
                                 <constraint firstAttribute="trailing" secondItem="R2e-cD-5yT" secondAttribute="trailing" id="xQU-8Q-5r7"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="0Tr-zd-Zae" appends="YES" id="Oht-lv-9sc"/>
+                            </connections>
                         </view>
                     </subviews>
                     <constraints>
@@ -256,10 +261,15 @@
             </constraints>
             <point key="canvasLocation" x="43.511450381679388" y="19.718309859154932"/>
         </view>
+        <tapGestureRecognizer id="0Tr-zd-Zae">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="BAG-XN-ZlJ"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <namedColor name="dark_Gray">
-            <color red="0.82352941176470584" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.82400000095367432" green="0.81599998474121094" blue="0.81599998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
