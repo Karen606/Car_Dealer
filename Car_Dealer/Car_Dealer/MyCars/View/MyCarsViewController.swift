@@ -109,7 +109,12 @@ extension MyCarsViewController: UITableViewDelegate, UITableViewDataSource {
             guard let self = self else { return }
             self.viewModel.fetchData()
         }
-        CarViewModel.shared.car = viewModel.cars[indexPath.section]
+        var carModel = viewModel.cars[indexPath.section]
+        
+        if carModel.expenses == nil {
+            carModel.expenses = [ExpensesModel(date: Date())]
+        }
+        CarViewModel.shared.car = carModel
         self.navigationController?.pushViewController(carVC, animated: true)
     }
 }

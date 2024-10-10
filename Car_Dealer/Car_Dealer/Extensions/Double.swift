@@ -17,3 +17,13 @@ extension Double? {
         }
     }
 }
+
+extension Double {
+    func formattedToString() -> String {
+        if Double(Int(self)) == self {
+            return "\(Int(self))"
+        } else {
+            return "\(self)"
+        }
+    }
+}

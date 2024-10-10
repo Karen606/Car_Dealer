@@ -9,12 +9,15 @@
         <attribute name="model" optional="YES" attributeType="String"/>
         <attribute name="photoAfter" optional="YES" attributeType="Transformable" customClassName="[Data]"/>
         <attribute name="photoBefore" optional="YES" attributeType="Transformable" customClassName="[Data]"/>
+        <attribute name="purchaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="purchasePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="salePrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="soldDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="year" optional="YES" attributeType="String"/>
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expenses" inverseName="car" inverseEntity="Expenses"/>
     </entity>
     <entity name="Expenses" representedClassName="Expenses" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="car" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="expenses" inverseEntity="Car"/>

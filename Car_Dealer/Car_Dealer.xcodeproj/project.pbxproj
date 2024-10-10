@@ -49,6 +49,11 @@
 		6BC6395D2CB7504B00ECEAA4 /* ExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC6395B2CB7504B00ECEAA4 /* ExpensesTableViewCell.swift */; };
 		6BC6395E2CB7504B00ECEAA4 /* ExpensesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BC6395C2CB7504B00ECEAA4 /* ExpensesTableViewCell.xib */; };
 		6BC639602CB766BB00ECEAA4 /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC6395F2CB766BB00ECEAA4 /* PaddingTextField.swift */; };
+		6BC6396D2CB79C5000ECEAA4 /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC6396B2CB79C5000ECEAA4 /* ReportsViewController.swift */; };
+		6BC6396E2CB79C5000ECEAA4 /* ReportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BC6396C2CB79C5000ECEAA4 /* ReportsViewController.xib */; };
+		6BC639712CB7C7C000ECEAA4 /* ReportsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC639702CB7C7C000ECEAA4 /* ReportsViewModel.swift */; };
+		6BC639742CB7C81100ECEAA4 /* ReportsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC639732CB7C81100ECEAA4 /* ReportsModel.swift */; };
+		6BC639762CB7D9EA00ECEAA4 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC639752CB7D9EA00ECEAA4 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +102,11 @@
 		6BC6395B2CB7504B00ECEAA4 /* ExpensesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesTableViewCell.swift; sourceTree = "<group>"; };
 		6BC6395C2CB7504B00ECEAA4 /* ExpensesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpensesTableViewCell.xib; sourceTree = "<group>"; };
 		6BC6395F2CB766BB00ECEAA4 /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
+		6BC6396B2CB79C5000ECEAA4 /* ReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
+		6BC6396C2CB79C5000ECEAA4 /* ReportsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsViewController.xib; sourceTree = "<group>"; };
+		6BC639702CB7C7C000ECEAA4 /* ReportsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewModel.swift; sourceTree = "<group>"; };
+		6BC639732CB7C81100ECEAA4 /* ReportsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsModel.swift; sourceTree = "<group>"; };
+		6BC639752CB7D9EA00ECEAA4 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F998576345B2AC27A783C9B6 /* Pods-Car_Dealer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Car_Dealer.release.xcconfig"; path = "Target Support Files/Pods-Car_Dealer/Pods-Car_Dealer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +143,7 @@
 		6B1B65A92CB5FB9800815AF3 /* Car_Dealer */ = {
 			isa = PBXGroup;
 			children = (
+				6BC639692CB79C2E00ECEAA4 /* Reports */,
 				6BC639512CB71FA500ECEAA4 /* Car */,
 				6B1B66042CB70DF400815AF3 /* SaleCar */,
 				6B1B65F42CB6A06F00815AF3 /* CoreData */,
@@ -159,6 +170,7 @@
 				6B1B65F72CB6A5F600815AF3 /* PriceTextField.swift */,
 				6B1B65DC2CB682CE00815AF3 /* ShadowView.swift */,
 				6B1B65FE2CB6DF3B00815AF3 /* Double.swift */,
+				6BC639752CB7D9EA00ECEAA4 /* Date.swift */,
 				6B1B65DE2CB682E500815AF3 /* UIView.swift */,
 				6B1B65E62CB6880F00815AF3 /* TitleLabel.swift */,
 				6B1B65E82CB6889700815AF3 /* BaseTextField.swift */,
@@ -331,6 +343,41 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		6BC639692CB79C2E00ECEAA4 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				6BC639722CB7C80000ECEAA4 /* Model */,
+				6BC6396F2CB7C14600ECEAA4 /* ViewModel */,
+				6BC6396A2CB79C3900ECEAA4 /* View */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		6BC6396A2CB79C3900ECEAA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BC6396B2CB79C5000ECEAA4 /* ReportsViewController.swift */,
+				6BC6396C2CB79C5000ECEAA4 /* ReportsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BC6396F2CB7C14600ECEAA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BC639702CB7C7C000ECEAA4 /* ReportsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6BC639722CB7C80000ECEAA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BC639732CB7C81100ECEAA4 /* ReportsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7E61CE567AFB532410C683A8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +457,7 @@
 			files = (
 				6B1B65CD2CB6036700815AF3 /* Inter-Bold.ttf in Resources */,
 				6B1B65E52CB6849900815AF3 /* AddCarViewController.xib in Resources */,
+				6BC6396E2CB79C5000ECEAA4 /* ReportsViewController.xib in Resources */,
 				6B1B65B72CB5FB9A00815AF3 /* Assets.xcassets in Resources */,
 				6B1B65BA2CB5FB9A00815AF3 /* Base in Resources */,
 				6BC6395E2CB7504B00ECEAA4 /* ExpensesTableViewCell.xib in Resources */,
@@ -474,7 +522,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC6396D2CB79C5000ECEAA4 /* ReportsViewController.swift in Sources */,
+				6BC639712CB7C7C000ECEAA4 /* ReportsViewModel.swift in Sources */,
 				6B1B65EB2CB6910300815AF3 /* BaseButton.swift in Sources */,
+				6BC639742CB7C81100ECEAA4 /* ReportsModel.swift in Sources */,
 				6B1B65AF2CB5FB9800815AF3 /* MenuViewController.swift in Sources */,
 				6B1B65B52CB5FB9800815AF3 /* Car_Dealer.xcdatamodeld in Sources */,
 				6B1B65D02CB6037500815AF3 /* Font.swift in Sources */,
@@ -498,6 +549,7 @@
 				6B1B660C2CB70F9100815AF3 /* SaleCarViewModel.swift in Sources */,
 				6BC639602CB766BB00ECEAA4 /* PaddingTextField.swift in Sources */,
 				6B1B65DF2CB682E500815AF3 /* UIView.swift in Sources */,
+				6BC639762CB7D9EA00ECEAA4 /* Date.swift in Sources */,
 				6B1B65F32CB69BB500815AF3 /* String.swift in Sources */,
 				6B1B65FF2CB6DF3B00815AF3 /* Double.swift in Sources */,
 				6B1B65D62CB6755300815AF3 /* MyCarsViewController.swift in Sources */,

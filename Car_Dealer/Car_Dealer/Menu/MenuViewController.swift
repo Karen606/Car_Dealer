@@ -34,6 +34,7 @@ class MenuViewController: UIViewController {
     @IBAction func clickedAddCar(_ sender: UIButton) {
     }
     @IBAction func clickedReports(_ sender: UIButton) {
+        self.pushViewController(ReportsViewController.self)
     }
     @IBAction func clickedHelp(_ sender: UIButton) {
     }

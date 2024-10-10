@@ -21,9 +21,12 @@ struct CarModel {
     var isSold: Bool = false
     var id: UUID
     var salePrice: Double?
+    var purchaseDate: Date?
+    var soldDate: Date?
 }
 
 struct ExpensesModel {
     var name: String?
     var price: Double?
+    var date: Date?
 }

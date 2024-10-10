@@ -34,11 +34,12 @@ class CoreDataManager {
                     if let expenses = result.expenses as? Set<Expenses> {
                         for expense in expenses {
                             let price = expense.price == 0 ? nil : expense.price
-                            let expenseModel = ExpensesModel(name: expense.name, price: price)
+                            let expenseModel = ExpensesModel(name: expense.name, price: price, date: expense.date)
+                            
                             expensesModel.append(expenseModel)
                         }
                     }
-                    let carModel = CarModel(brand: result.brand, model: result.model, year: result.year, mileag: result.mileag, purchasePrice: result.purchasePrice, info: result.info, photoBefore: result.photoBefore, photoAfter: result.photoAfter, expenses: expensesModel, isSold: result.isSold, id: result.id ?? UUID(), salePrice: result.salePrice)
+                    let carModel = CarModel(brand: result.brand, model: result.model, year: result.year, mileag: result.mileag, purchasePrice: result.purchasePrice, info: result.info, photoBefore: result.photoBefore, photoAfter: result.photoAfter, expenses: expensesModel, isSold: result.isSold, id: result.id ?? UUID(), salePrice: result.salePrice, purchaseDate: result.purchaseDate, soldDate: result.soldDate)
                     carModels.append(carModel)
                 }
                 DispatchQueue.main.async {
@@ -78,6 +79,7 @@ class CoreDataManager {
                 car.year = carModel.year
                 car.photoBefore = carModel.photoBefore
                 car.photoAfter = carModel.photoAfter
+                car.purchaseDate = carModel.purchaseDate
                 
                 if let expenses = carModel.expenses {
                     var carExpenses = Set<Expenses>()
@@ -85,6 +87,7 @@ class CoreDataManager {
                         let carExpense = Expenses(context: backgroundContext)
                         carExpense.name = expenseModel.name
                         carExpense.price = expenseModel.price ?? 0
+                        carExpense.date = expenseModel.date
                         carExpenses.insert(carExpense)
                     }
                     car.expenses = carExpenses as NSSet
@@ -123,12 +126,15 @@ class CoreDataManager {
                     car.year = carModel.year
                     car.photoBefore = carModel.photoBefore
                     car.photoAfter = carModel.photoAfter
+                    car.soldDate = carModel.soldDate
+                    
                     if let expenses = carModel.expenses {
                         var carExpenses = Set<Expenses>()
                         for expenseModel in expenses {
                             let carExpense = Expenses(context: backgroundContext)
                             carExpense.name = expenseModel.name
                             carExpense.price = expenseModel.price ?? 0
+                            carExpense.date = expenseModel.date
                             carExpenses.insert(carExpense)
                         }
                         car.expenses = carExpenses as NSSet

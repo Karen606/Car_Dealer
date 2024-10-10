@@ -13,6 +13,7 @@ class SaleCarViewModel {
     private init() {}
     
     func save(completion: @escaping (Error?) -> Void) {
+        carModel?.soldDate = Date()
         guard let carModel = carModel else { return }
         CoreDataManager.shared.saleCar(carModel: carModel) { error in
             completion(error)

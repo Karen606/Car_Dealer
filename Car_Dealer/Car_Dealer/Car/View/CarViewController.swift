@@ -145,7 +145,7 @@ class CarViewController: UIViewController {
     }
     
     @objc func addexpense() {
-        viewModel.car?.expenses?.append(ExpensesModel())
+        viewModel.car?.expenses?.append(ExpensesModel(date: Date()))
     }
     
     @IBAction func clickedSave(_ sender: UIButton) {
