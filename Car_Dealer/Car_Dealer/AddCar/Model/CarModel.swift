@@ -5,7 +5,8 @@
 //  Created by Karen Khachatryan on 09.10.24.
 //
 
-import Foundation
+import UIKit
+
 
 struct CarModel {
     var brand: String?

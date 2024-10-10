@@ -84,7 +84,15 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var carModels: [CarModel] = []
                 for result in results {
-                    let carModel = CarModel(brand: result.brand, model: result.model, year: result.year, mileag: result.mileag, purchasePrice: result.purchasePrice, info: result.info, photoBefore: result.photoBefore, photoAfter: result.photoAfter, expenses: Array(_immutableCocoaArray: result.expenses ?? []), isSold: result.isSold, id: result.id ?? UUID(), salePrice: result.salePrice)
+                    var expensesModel: [ExpensesModel] = []
+                    if let expenses = result.expenses as? Set<Expenses> {
+                        for expense in expenses {
+                            let price = expense.price == 0 ? nil : expense.price
+                            let expenseModel = ExpensesModel(name: expense.name, price: price)
+                            expensesModel.append(expenseModel)
+                        }
+                    }
+                    let carModel = CarModel(brand: result.brand, model: result.model, year: result.year, mileag: result.mileag, purchasePrice: result.purchasePrice, info: result.info, photoBefore: result.photoBefore, photoAfter: result.photoAfter, expenses: expensesModel, isSold: result.isSold, id: result.id ?? UUID(), salePrice: result.salePrice)
                     carModels.append(carModel)
                 }
                 DispatchQueue.main.async {
@@ -98,7 +106,7 @@ class CoreDataManager {
         }
     }
     
-    func saveWine(carModel: CarModel, completion: @escaping (Error?) -> Void) {
+    func saveCar(carModel: CarModel, completion: @escaping (Error?) -> Void) {
         let backgroundContext = persistentContainer.newBackgroundContext()
         backgroundContext.perform {
             let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
@@ -115,17 +123,38 @@ class CoreDataManager {
                     car.id = carModel.id
                 }
                 car.brand = carModel.brand
-                car.expenses = NSOrderedSet(array: carModel.expenses ?? [])
                 car.info = carModel.info
                 car.isSold = carModel.isSold
                 car.mileag = carModel.mileag
-                car.model = carModel.mileag
+                car.model = carModel.model
                 car.purchasePrice = carModel.purchasePrice ?? 0
                 car.salePrice = carModel.salePrice ?? 0
                 car.year = carModel.year
                 car.photoBefore = carModel.photoBefore
                 car.photoAfter = carModel.photoAfter
-    
+//                var expensesModel: [ExpensesModel] = []
+//                if let expenses = car.expenses as? Set<Expenses> {
+//                    for expense in expenses {
+//                        let expenseModel = ExpensesModel(name: expense.name, price: expense.price)
+//                        expensesModel.append(expenseModel)
+//                    }
+//                }
+//                carModel.exp = expensesModel
+
+                
+                if let expenses = carModel.expenses {
+                    var carExpenses = Set<Expenses>()
+                    for expenseModel in expenses {
+                        let carExpense = Expenses(context: backgroundContext)
+                        carExpense.name = expenseModel.name
+                        carExpense.price = expenseModel.price ?? 0
+                        carExpenses.insert(carExpense)
+                    }
+                    car.expenses = carExpenses as NSSet
+                } else {
+                    car.expenses = nil
+                }
+                
                 try backgroundContext.save()
                 DispatchQueue.main.async {
                     completion(nil)
@@ -149,15 +178,26 @@ class CoreDataManager {
                 if let car = results.first {
                     car.isSold = true
                     car.brand = carModel.brand
-                    car.expenses = NSOrderedSet(array: carModel.expenses ?? [])
                     car.info = carModel.info
                     car.mileag = carModel.mileag
-                    car.model = carModel.mileag
+                    car.model = carModel.model
                     car.purchasePrice = carModel.purchasePrice ?? 0
                     car.salePrice = carModel.salePrice ?? 0
                     car.year = carModel.year
                     car.photoBefore = carModel.photoBefore
                     car.photoAfter = carModel.photoAfter
+                    if let expenses = carModel.expenses {
+                        var carExpenses = Set<Expenses>()
+                        for expenseModel in expenses {
+                            let carExpense = Expenses(context: backgroundContext)
+                            carExpense.name = expenseModel.name
+                            carExpense.price = expenseModel.price ?? 0
+                            carExpenses.insert(carExpense)
+                        }
+                        car.expenses = carExpenses as NSSet
+                    } else {
+                        car.expenses = nil
+                    }
                     try backgroundContext.save()
                     DispatchQueue.main.async {
                         completion(nil)

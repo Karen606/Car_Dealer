@@ -5,15 +5,16 @@
 //  Created by Karen Khachatryan on 09.10.24.
 //
 
-import Foundation
+import UIKit
 
 class AddCarViewModel {
     static let shared = AddCarViewModel()
-    @Published var carModel = CarModel(id: UUID())
+    @Published var carModel = CarModel(photoBefore: [UIImage.imagePlaceholder.jpegData(compressionQuality: 1.0) ?? Data()], photoAfter: [UIImage.imagePlaceholder.jpegData(compressionQuality: 1.0) ?? Data()], expenses: [ExpensesModel()], id: UUID())
+    
     private init() {}
     
     func save(completion: @escaping (Error?) -> Void) {
-        CoreDataManager.shared.saveWine(carModel: carModel) { error in
+        CoreDataManager.shared.saveCar(carModel: carModel) { error in
             completion(error)
         }
     }
@@ -23,6 +24,6 @@ class AddCarViewModel {
     }
     
     func clear() {
-        carModel = CarModel(id: UUID())
+        carModel = CarModel(photoBefore: [UIImage.imagePlaceholder.jpegData(compressionQuality: 1.0) ?? Data()], photoAfter: [UIImage.imagePlaceholder.jpegData(compressionQuality: 1.0) ?? Data()], expenses: [ExpensesModel()], id: UUID())
     }
 }

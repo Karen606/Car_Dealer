@@ -97,10 +97,19 @@ extension MyCarsViewController: UITableViewDelegate, UITableViewDataSource {
             footerView.addSubview(button)
             return footerView
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return viewModel.cars[section].isSold ? 8 : 40
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let carVC = CarViewController(nibName: "CarViewController", bundle: nil)
+        carVC.completion = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.fetchData()
+        }
+        CarViewModel.shared.car = viewModel.cars[indexPath.section]
+        self.navigationController?.pushViewController(carVC, animated: true)
     }
 }
