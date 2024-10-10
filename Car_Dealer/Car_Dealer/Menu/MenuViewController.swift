@@ -32,11 +32,14 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func clickedAddCar(_ sender: UIButton) {
-    }
+        let addCarVC = AddCarViewController(nibName: "AddCarViewController", bundle: nil)
+        self.navigationController?.pushViewController(addCarVC, animated: true)    }
+    
     @IBAction func clickedReports(_ sender: UIButton) {
         self.pushViewController(ReportsViewController.self)
     }
     @IBAction func clickedHelp(_ sender: UIButton) {
+        self.pushViewController(SettingsViewController.self)
     }
 }
 

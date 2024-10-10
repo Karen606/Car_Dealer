@@ -43,6 +43,8 @@
 		6B1B66082CB70E0F00815AF3 /* SaleCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B66062CB70E0F00815AF3 /* SaleCarViewController.swift */; };
 		6B1B66092CB70E0F00815AF3 /* SaleCarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1B66072CB70E0F00815AF3 /* SaleCarViewController.xib */; };
 		6B1B660C2CB70F9100815AF3 /* SaleCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B660B2CB70F9100815AF3 /* SaleCarViewModel.swift */; };
+		6B8C53CA2CB7E882002557E3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8C53C82CB7E882002557E3 /* SettingsViewController.swift */; };
+		6B8C53CB2CB7E882002557E3 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8C53C92CB7E882002557E3 /* SettingsViewController.xib */; };
 		6BC639552CB71FB400ECEAA4 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC639532CB71FB400ECEAA4 /* CarViewController.swift */; };
 		6BC639562CB71FB400ECEAA4 /* CarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BC639542CB71FB400ECEAA4 /* CarViewController.xib */; };
 		6BC639592CB73CAD00ECEAA4 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC639582CB73CAD00ECEAA4 /* CarViewModel.swift */; };
@@ -96,6 +98,8 @@
 		6B1B66062CB70E0F00815AF3 /* SaleCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCarViewController.swift; sourceTree = "<group>"; };
 		6B1B66072CB70E0F00815AF3 /* SaleCarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaleCarViewController.xib; sourceTree = "<group>"; };
 		6B1B660B2CB70F9100815AF3 /* SaleCarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCarViewModel.swift; sourceTree = "<group>"; };
+		6B8C53C82CB7E882002557E3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6B8C53C92CB7E882002557E3 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		6BC639532CB71FB400ECEAA4 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		6BC639542CB71FB400ECEAA4 /* CarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarViewController.xib; sourceTree = "<group>"; };
 		6BC639582CB73CAD00ECEAA4 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		6B1B65A92CB5FB9800815AF3 /* Car_Dealer */ = {
 			isa = PBXGroup;
 			children = (
+				6B8C53C72CB7E874002557E3 /* Settings */,
 				6BC639692CB79C2E00ECEAA4 /* Reports */,
 				6BC639512CB71FA500ECEAA4 /* Car */,
 				6B1B66042CB70DF400815AF3 /* SaleCar */,
@@ -307,6 +312,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6B8C53C72CB7E874002557E3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6B8C53C82CB7E882002557E3 /* SettingsViewController.swift */,
+				6B8C53C92CB7E882002557E3 /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		6BC639512CB71FA500ECEAA4 /* Car */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +480,7 @@
 				6B1B65FD2CB6D78600815AF3 /* CarTableViewCell.xib in Resources */,
 				6B1B65CC2CB6036700815AF3 /* Inter-Medium.ttf in Resources */,
 				6BC639562CB71FB400ECEAA4 /* CarViewController.xib in Resources */,
+				6B8C53CB2CB7E882002557E3 /* SettingsViewController.xib in Resources */,
 				6B1B66092CB70E0F00815AF3 /* SaleCarViewController.xib in Resources */,
 				6B1B65B22CB5FB9800815AF3 /* Base in Resources */,
 				6B1B65CE2CB6036700815AF3 /* Inter-SemiBold.ttf in Resources */,
@@ -529,6 +544,7 @@
 				6B1B65AF2CB5FB9800815AF3 /* MenuViewController.swift in Sources */,
 				6B1B65B52CB5FB9800815AF3 /* Car_Dealer.xcdatamodeld in Sources */,
 				6B1B65D02CB6037500815AF3 /* Font.swift in Sources */,
+				6B8C53CA2CB7E882002557E3 /* SettingsViewController.swift in Sources */,
 				6B1B65F62CB6A08500815AF3 /* CoreDataManager.swift in Sources */,
 				6B1B65F82CB6A5F600815AF3 /* PriceTextField.swift in Sources */,
 				6B1B65AB2CB5FB9800815AF3 /* AppDelegate.swift in Sources */,
