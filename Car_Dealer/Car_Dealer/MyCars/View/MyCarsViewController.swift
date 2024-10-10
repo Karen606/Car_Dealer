@@ -113,3 +113,9 @@ extension MyCarsViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(carVC, animated: true)
     }
 }
+
+extension MyCarsViewController: CarTableViewCellDelegate {
+    func showError(error: any Error) {
+        self.showErrorAlert(message: error.localizedDescription)
+    }
+}

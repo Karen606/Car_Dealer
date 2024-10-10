@@ -22,60 +22,6 @@ class CoreDataManager {
         return container
     }()
     
-//    func fetchWine(completion: @escaping ([WineModel], Error?) -> Void) {
-//        let backgroundContext = persistentContainer.newBackgroundContext()
-//        backgroundContext.perform {
-//            let fetchRequest: NSFetchRequest<Wine> = Wine.fetchRequest()
-//            do {
-//                let results = try backgroundContext.fetch(fetchRequest)
-//                var wineModels: [WineModel] = []
-//                for result in results {
-//                    let wineModel = WineModel(id: result.id ?? UUID(), name: result.name, photo: result.photo, grape: result.grape, country: result.country, year: result.year, qualities: result.qualities, rating: result.rating, isFavorite: result.isFavorite, isMyWine: result.isMyWine)
-//                    wineModels.append(wineModel)
-//                }
-//                DispatchQueue.main.async {
-//                    completion(wineModels, nil)
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion([], error)
-//                }
-//            }
-//        }
-//    }
-//    
-//    func fetchFavoriteWine(completion: @escaping ([WineModel], Error?) -> Void) {
-//        let backgroundContext = persistentContainer.newBackgroundContext()
-//        backgroundContext.perform {
-//            let fetchRequest: NSFetchRequest<Wine> = Wine.fetchRequest()
-//            fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", NSNumber(value: true))
-//            do {
-//                let results = try backgroundContext.fetch(fetchRequest)
-//                var wineModels: [WineModel] = []
-//                for result in results {
-//                    let wineModel = WineModel(id: result.id ?? UUID(),
-//                                              name: result.name,
-//                                              photo: result.photo,
-//                                              grape: result.grape,
-//                                              country: result.country,
-//                                              year: result.year,
-//                                              qualities: result.qualities,
-//                                              rating: result.rating,
-//                                              isFavorite: result.isFavorite,
-//                                              isMyWine: result.isMyWine)
-//                    wineModels.append(wineModel)
-//                }
-//                DispatchQueue.main.async {
-//                    completion(wineModels, nil)
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion([], error)
-//                }
-//            }
-//        }
-//    }
-//    
     func fetchMyCars(completion: @escaping ([CarModel], Error?) -> Void) {
         let backgroundContext = persistentContainer.newBackgroundContext()
         backgroundContext.perform {
@@ -132,15 +78,6 @@ class CoreDataManager {
                 car.year = carModel.year
                 car.photoBefore = carModel.photoBefore
                 car.photoAfter = carModel.photoAfter
-//                var expensesModel: [ExpensesModel] = []
-//                if let expenses = car.expenses as? Set<Expenses> {
-//                    for expense in expenses {
-//                        let expenseModel = ExpensesModel(name: expense.name, price: expense.price)
-//                        expensesModel.append(expenseModel)
-//                    }
-//                }
-//                carModel.exp = expensesModel
-
                 
                 if let expenses = carModel.expenses {
                     var carExpenses = Set<Expenses>()
@@ -214,32 +151,32 @@ class CoreDataManager {
             }
         }
     }
-//
-//    func updateMyWineStatus(wineID: UUID, isMyWine: Bool, completion: @escaping (Error?) -> Void) {
-//        let backgroundContext = persistentContainer.newBackgroundContext()
-//        backgroundContext.perform {
-//            let fetchRequest: NSFetchRequest<Wine> = Wine.fetchRequest()
-//            fetchRequest.predicate = NSPredicate(format: "id == %@", wineID as CVarArg)
-//            do {
-//                let results = try backgroundContext.fetch(fetchRequest)
-//                
-//                if let wine = results.first {
-//                    wine.isMyWine = isMyWine
-//                    try backgroundContext.save()
-//                    DispatchQueue.main.async {
-//                        completion(nil)
-//                    }
-//                } else {
-//                    DispatchQueue.main.async {
-//                        completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Wine not found"]))
-//                    }
-//                }
-//            } catch {
-//                DispatchQueue.main.async {
-//                    completion(error)
-//                }
-//            }
-//        }
-//    }
-//    
+    
+    func removeCar(by id: UUID, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let carToDelete = results.first {
+                    backgroundContext.delete(carToDelete)
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "removeCar", code: 404, userInfo: [NSLocalizedDescriptionKey: "Car not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
 }

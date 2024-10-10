@@ -19,7 +19,12 @@ class MyCarsViewModel {
         }
     }
     
-    func sale() {
-        
+    func removeCar(id: UUID, completion: @escaping (Error?) -> Void) {
+        CoreDataManager.shared.removeCar(by: id) { [weak self] error in
+            if let self = self, error == nil {
+                self.fetchData()
+            }
+            completion(error)
+        }
     }
 }

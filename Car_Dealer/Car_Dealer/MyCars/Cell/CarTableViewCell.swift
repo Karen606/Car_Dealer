@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CarTableViewCellDelegate: AnyObject {
+    func showError(error: Error)
+}
+
 class CarTableViewCell: UITableViewCell {
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
@@ -19,6 +23,8 @@ class CarTableViewCell: UITableViewCell {
     @IBOutlet weak var expensesTitleLabel: UILabel!
     @IBOutlet var labels: [UILabel]!
     @IBOutlet weak var removeButton: UIButton!
+    weak var delegate: CarTableViewCellDelegate?
+    var carID: UUID?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +36,7 @@ class CarTableViewCell: UITableViewCell {
     }
     
     func setupContent(carModel: CarModel) {
+        self.carID = carModel.id
         modelLabel.text = "\(carModel.brand ?? "") \(carModel.model ?? "")"
         yearLabel.text = carModel.year
         mileageLabel.text = "\(carModel.mileag ?? "") km"
@@ -48,6 +55,15 @@ class CarTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        self.carID = nil
+    }
+    
     @IBAction func clickedRemove(_ sender: UIButton) {
+        guard let id = carID else { return }
+        MyCarsViewModel.shared.removeCar(id: id) { [weak self] error in
+            guard let self = self, let error = error else { return }
+            delegate?.showError(error: error)
+        }
     }
 }
