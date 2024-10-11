@@ -14,7 +14,6 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionsView.forEach({ $0.setGradientBackground() })
         sectionButtons.forEach({ $0.titleLabel?.font = .semibold(size: 22) })
     }
     
@@ -38,6 +37,7 @@ class MenuViewController: UIViewController {
     @IBAction func clickedReports(_ sender: UIButton) {
         self.pushViewController(ReportsViewController.self)
     }
+    
     @IBAction func clickedHelp(_ sender: UIButton) {
         self.pushViewController(SettingsViewController.self)
     }

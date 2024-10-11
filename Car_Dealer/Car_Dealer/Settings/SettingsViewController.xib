@@ -28,7 +28,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRu-oI-FcQ">
                     <rect key="frame" x="0.0" y="256.66666666666669" width="393" height="364.00000000000006"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFr-TJ-egT">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFr-TJ-egT" customClass="GradientView" customModule="Car_Dealer" customModuleProvider="target">
                             <rect key="frame" x="129" y="10" width="264" height="88"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reportCar" translatesAutoresizingMaskIntoConstraints="NO" id="9yl-xl-SrX">
@@ -67,7 +67,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i64-Ze-chT">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i64-Ze-chT" customClass="GradientView" customModule="Car_Dealer" customModuleProvider="target">
                             <rect key="frame" x="10" y="265.99999999999994" width="383" height="88"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myCar" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-ja-lgb">
@@ -106,7 +106,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-qO-YBv">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSh-qO-YBv" customClass="GradientView" customModule="Car_Dealer" customModuleProvider="target">
                             <rect key="frame" x="38" y="138" width="355" height="88"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addCar" translatesAutoresizingMaskIntoConstraints="NO" id="Dwd-Lr-6bd">

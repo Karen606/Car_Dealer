@@ -12,9 +12,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet var sectionsView: [UIView]!
     override func viewDidLoad() {
         super.viewDidLoad()
-        sectionsView.forEach({ $0.setGradientBackground() })
         sectionButtons.forEach({ $0.titleLabel?.font = .semibold(size: 22) })
         setNavigationBar(title: "Help")
-        // Do any additional setup after loading the view.
     }
 }

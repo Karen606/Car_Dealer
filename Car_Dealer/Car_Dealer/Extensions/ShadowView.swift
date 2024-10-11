@@ -19,3 +19,18 @@ class ShadowView: UIView {
          addShadow()
      }
 }
+
+class GradientView: UIView {
+    override init(frame: CGRect) {
+         super.init(frame: frame)
+     }
+     
+     required init?(coder: NSCoder) {
+         super.init(coder: coder)
+     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setGradientBackground()
+    }
+}
