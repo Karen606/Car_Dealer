@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRu-oI-FcQ">
-                    <rect key="frame" x="0.0" y="256.66666666666669" width="393" height="364.00000000000006"/>
+                    <rect key="frame" x="0.0" y="269" width="393" height="364"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFr-TJ-egT" customClass="GradientView" customModule="Car_Dealer" customModuleProvider="target">
                             <rect key="frame" x="129" y="10" width="264" height="88"/>
@@ -48,6 +49,9 @@
                                     <state key="normal" title="RATE US">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="clickedRateUs:" destination="-1" eventType="touchUpInside" id="TwO-ru-T9v"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="dark_Gray"/>
@@ -68,7 +72,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i64-Ze-chT" customClass="GradientView" customModule="Car_Dealer" customModuleProvider="target">
-                            <rect key="frame" x="10" y="265.99999999999994" width="383" height="88"/>
+                            <rect key="frame" x="10" y="266" width="383" height="88"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myCar" translatesAutoresizingMaskIntoConstraints="NO" id="f6A-ja-lgb">
                                     <rect key="frame" x="213" y="0.0" width="175" height="88"/>
@@ -87,6 +91,9 @@
                                     <state key="normal" title="PRIVACY POLICY">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="clickedPrivacyPolicy:" destination="-1" eventType="touchUpInside" id="BRK-LS-cXj"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="dark_Gray"/>
@@ -126,6 +133,9 @@
                                     <state key="normal" title="CONTACT US">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="clickedContactUs:" destination="-1" eventType="touchUpInside" id="Fmt-cx-unk"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" name="dark_Gray"/>
@@ -167,6 +177,8 @@
                 <constraint firstItem="LRu-oI-FcQ" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="32X-dn-qSg"/>
                 <constraint firstItem="LRu-oI-FcQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IA0-rm-3ep"/>
                 <constraint firstItem="LRu-oI-FcQ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="SW2-lR-vWo"/>
+                <constraint firstItem="LRu-oI-FcQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="aE8-Yv-ZXa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LRu-oI-FcQ" secondAttribute="bottom" constant="16" id="dPn-eQ-FCl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LRu-oI-FcQ" secondAttribute="trailing" id="wgH-Wp-f4J"/>
             </constraints>
             <point key="canvasLocation" x="75.572519083969468" y="19.718309859154932"/>

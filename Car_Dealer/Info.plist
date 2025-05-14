@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>We need access to your camera to take photos.</string>
+	<string>This app requires access to your camera to take photos of car.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need access to your photo library to choose photos.</string>
+	<string>This app requires access to your photo library so you can select a car photo.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>gothampro_medium.ttf</string>
